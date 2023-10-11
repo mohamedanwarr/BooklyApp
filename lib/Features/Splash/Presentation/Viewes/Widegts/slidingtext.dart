@@ -13,6 +13,9 @@ class SlidingText extends StatelessWidget {
       position:slidinganimation,
       child: const Text('Read Free Books'
         , textAlign: TextAlign.center,
+        style: TextStyle(
+          fontWeight: FontWeight.bold
+        ),
       ),
     );
   }
