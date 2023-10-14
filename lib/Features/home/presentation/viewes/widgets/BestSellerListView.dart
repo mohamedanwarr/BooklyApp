@@ -12,7 +12,7 @@ class BestSellerListViwe extends StatelessWidget {
         scrollDirection: Axis.vertical,
         itemBuilder:(context,int index){
           return  Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20.0,horizontal: 30),
+            padding: const EdgeInsets.symmetric(vertical: 10.0,horizontal: 20),
             child: BestSellerListitem(),
           );
 

@@ -1,9 +1,8 @@
+import 'package:bookyapp/Core/utils/AppRouter.dart';
 import 'package:bookyapp/Core/utils/assets.dart';
-import 'package:bookyapp/Features/home/presentation/viewes/Home_view.dart';
-import 'package:bookyapp/constant.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_navigation/get_navigation.dart';
+import 'package:go_router/go_router.dart';
+
 import 'package:svg_flutter/svg.dart';
 import 'slidingtext.dart';
 
@@ -55,8 +54,7 @@ class _SplashViewbodyState extends State<SplashViewbody>
 
   void NaviagtetoHome() {
     Future.delayed(const Duration(seconds: 2), () {
-      Get.to(() => const Home(),
-          transition: Transition.fade, duration: Ktranstion);
+    GoRouter.of(context).push(AppRouter.KHomeView);
     });
   }
 

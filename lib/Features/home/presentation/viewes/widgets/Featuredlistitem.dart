@@ -12,7 +12,7 @@ class Featuredlistitem extends StatelessWidget {
           itemBuilder: (context, int index) {
             return const Padding(
               padding: EdgeInsets.only(left:15),
-              child: itemoflist(),
+              child: customeBookItem(),
             );
           }),
     );

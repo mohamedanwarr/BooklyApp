@@ -2,8 +2,8 @@
 
 import 'package:bookyapp/Core/utils/assets.dart';
 import 'package:flutter/material.dart';
-class itemoflist extends StatelessWidget {
-  const itemoflist({Key? key}) : super(key: key);
+class customeBookItem extends StatelessWidget {
+  const customeBookItem({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
