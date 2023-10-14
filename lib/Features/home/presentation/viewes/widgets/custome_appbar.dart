@@ -21,7 +21,7 @@ class CustomAppBar extends StatelessWidget {
             onPressed: () {},
             icon: const Icon(
               FlutterIcons.search_oct,
-              size: 25,
+              size: 22,
             ),
           )
         ],
