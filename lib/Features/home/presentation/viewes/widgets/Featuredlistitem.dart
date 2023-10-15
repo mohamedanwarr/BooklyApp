@@ -11,7 +11,7 @@ class Featuredlistitem extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, int index) {
             return const Padding(
-              padding: EdgeInsets.only(left:15),
+              padding: EdgeInsets.only(left:20),
               child: customeBookItem(),
             );
           }),
