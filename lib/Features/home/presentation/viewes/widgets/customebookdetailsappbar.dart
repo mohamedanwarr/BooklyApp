@@ -9,7 +9,8 @@ class CustomeBookDetailsAppBar extends StatelessWidget {
     return  Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        IconButton(onPressed: (){
+        IconButton(
+          onPressed: (){
           GoRouter.of(context).pop();
 
         },icon:const Icon(FlutterIcons.close_ant),),
