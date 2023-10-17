@@ -1,3 +1,4 @@
+import 'package:bookyapp/Features/Search/Presentation/Views/Search_View.dart';
 import 'package:bookyapp/Features/Splash/Presentation/Viewes/Splash_View.dart';
 import 'package:bookyapp/Features/home/presentation/viewes/Book_details_view.dart';
 import 'package:bookyapp/Features/home/presentation/viewes/Home_view.dart';
@@ -6,6 +7,7 @@ import 'package:go_router/go_router.dart';
 abstract class AppRouter {
   static const KHomeView='/homeView';
   static const KbookDetails='/bookdetails';
+  static const KSearchView='/searchView';
   static final GoRouter router = GoRouter(routes: <RouteBase>[
     GoRoute(
         path: '/',
@@ -21,6 +23,11 @@ abstract class AppRouter {
         path: KbookDetails,
         builder: (context, GoRouterState state) {
           return const  BookDetailsView();
+        }),
+    GoRoute(
+        path: KSearchView,
+        builder: (context, GoRouterState state) {
+          return const  Search_Viwe();
         }),
   ]);
 }
