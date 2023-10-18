@@ -3,8 +3,6 @@
 import 'package:bookyapp/Core/utils/Styles.dart';
 import 'package:bookyapp/Features/Search/Presentation/Views/Widgets/CustomeSerarchTextFiled.dart';
 import 'package:bookyapp/Features/Search/Presentation/Views/Widgets/SearchResultListView.dart';
-import 'package:bookyapp/Features/Search/Presentation/Views/Widgets/SearchViewBody.dart';
-import 'package:bookyapp/Features/home/presentation/viewes/widgets/BestSellerListitem.dart';
 import 'package:flutter/material.dart';
 
 class Search_Viwe_Body extends StatelessWidget {

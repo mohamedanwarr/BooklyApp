@@ -1,4 +1,4 @@
-import 'package:bookyapp/Features/home/presentation/viewes/widgets/BestSellerListitem.dart';
+import 'package:bookyapp/Features/home/presentation/viewes/widgets/BestSellerListitem.dart' show BestSellerListitem;
 import 'package:flutter/material.dart';
 class SearchResultListView extends StatelessWidget {
   const SearchResultListView({Key? key}) : super(key: key);
