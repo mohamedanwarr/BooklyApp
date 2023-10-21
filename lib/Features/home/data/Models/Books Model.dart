@@ -26,7 +26,7 @@ class BooksModels extends BookEntity {
       : super(
             bookid: "$id",
             authorname: volumeInfo?.authors?.first ?? ' No Name',
-            price: 0,
+            price: 0.0,
             rating: volumeInfo!.maturityRating,
             title: "$volumeInfo.title",
             image: volumeInfo?.imageLinks?.thumbnail ?? '');
