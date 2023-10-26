@@ -1,4 +1,4 @@
-import 'package:bookyapp/Features/home/Domain/Entities/entities.dart';
+import 'package:bookyapp/Features/home/Domain/Entities/book_entity.dart';
 import 'package:bookyapp/Features/home/data/Models/AccessInfo.dart';
 import 'package:bookyapp/Features/home/data/Models/SaleInfo%20model.dart';
 import 'package:bookyapp/Features/home/data/Models/SearchInfo%20model%20mod.dart';

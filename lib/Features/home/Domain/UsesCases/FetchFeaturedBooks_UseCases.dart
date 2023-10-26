@@ -1,6 +1,6 @@
 import 'package:bookyapp/Core/Errors/Failure.dart';
 import 'package:bookyapp/Core/Errors/Use_Case/use_case.dart';
-import 'package:bookyapp/Features/home/Domain/Entities/entities.dart';
+import 'package:bookyapp/Features/home/Domain/Entities/book_entity.dart';
 import 'package:bookyapp/Features/home/Domain/Repo/HomeRepo.dart';
 import 'package:dartz/dartz.dart';
 

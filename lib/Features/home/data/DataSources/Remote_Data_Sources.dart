@@ -1,7 +1,7 @@
 // ignore_for_file: non_constant_identifier_names
 
 import 'package:bookyapp/Core/utils/ApiServices.dart';
-import 'package:bookyapp/Features/home/Domain/Entities/entities.dart';
+import 'package:bookyapp/Features/home/Domain/Entities/book_entity.dart';
 import 'package:bookyapp/Features/home/data/Models/Books%20Model.dart';
 
 abstract class HomeRemoteDataSourcces {
