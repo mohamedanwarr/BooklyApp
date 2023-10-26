@@ -1,8 +1,11 @@
 // ignore_for_file: non_constant_identifier_names
 
 import 'package:bookyapp/Core/utils/ApiServices.dart';
+import 'package:bookyapp/Core/utils/functions/Save_Box.dart';
 import 'package:bookyapp/Features/home/Domain/Entities/book_entity.dart';
 import 'package:bookyapp/Features/home/data/Models/Books%20Model.dart';
+import 'package:bookyapp/constant.dart';
+import 'package:hive/hive.dart';
 
 abstract class HomeRemoteDataSourcces {
   Future<List<BookEntity>> FetchFeaturedBooks();
@@ -18,8 +21,11 @@ class HomeRemoteDataSourcceImpl extends HomeRemoteDataSourcces {
     var data = await apiServices.get(
         endpoint: 'volumes?q=Harry Potter &Filtering =free-ebooks');
     List<BookEntity> books = getBooksList(data);
+    SaveBooksData(books,KfeaturedBox);
   return books;
   }
+
+
 
 
 
