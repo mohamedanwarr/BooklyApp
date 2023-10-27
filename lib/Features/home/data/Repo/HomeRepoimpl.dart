@@ -4,6 +4,7 @@ import 'package:bookyapp/Features/home/Domain/Repo/HomeRepo.dart';
 import 'package:bookyapp/Features/home/data/DataSources/Local_Data_Source.dart';
 import 'package:bookyapp/Features/home/data/DataSources/Remote_Data_Sources.dart';
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 
 class HomeRepoImpl extends HomeRepo {
   final HomeRemoteDataSourcces homeRemoteDataSourcces;
@@ -15,29 +16,41 @@ class HomeRepoImpl extends HomeRepo {
 
   @override
   Future<Either<Failure, List<BookEntity>>> FetchFeaturedBooks() async {
+    List<BookEntity> books;
     try {
-      var bookslist = homeLocalDataSourcces.FetchFeaturedBooks();
-      if (bookslist.isNotEmpty) {
-        return right(bookslist);
+      books = homeLocalDataSourcces.FetchFeaturedBooks();
+      if (books.isNotEmpty) {
+        return right(books);
       }
-      var books = await homeRemoteDataSourcces.FetchFeaturedBooks();
+      books = await homeRemoteDataSourcces.FetchFeaturedBooks();
       return right(books);
-    } on Exception catch (e) {
-      return left(Failure());
-    }
-  }
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDiorError(e));
+      }
+      return left(ServerFailure(e.toString()));
+
+      }
+      }
+
 
   @override
   Future<Either<Failure, List<BookEntity>>> FetchNewBooks() async {
+    List<BookEntity> books;
     try {
-      var booklist = homeLocalDataSourcces.FetchNewBooks();
-      if (booklist.isNotEmpty) {
-        return right(booklist);
+      books = homeLocalDataSourcces.FetchNewBooks();
+      if (books.isNotEmpty) {
+        return right(books);
       }
-      var books = await homeRemoteDataSourcces.FetchNewBooks();
+      books = await homeRemoteDataSourcces.FetchNewBooks();
       return right(books);
-    } on Exception catch (e) {
-      return left(Failure());
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDiorError(e));
+      }
+      return left(ServerFailure(e.toString()));
+
     }
   }
-}
+  }
+
