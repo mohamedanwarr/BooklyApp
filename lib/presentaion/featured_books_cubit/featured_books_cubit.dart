@@ -9,10 +9,10 @@ import 'package:meta/meta.dart';
 part 'featured_books_state.dart';
 
 class FeaturedBooksCubit extends Cubit<FeaturedBooksState> {
-  FeaturedBooksCubit(this.featuredBooksUseCases, this.fetchNewBooksUseCases)
+  FeaturedBooksCubit(this.featuredBooksUseCases,)
       : super(FeaturedBooksInitial());
   final FetchFeaturedBooksUseCases featuredBooksUseCases;
-  final FetchNewBooksUseCases fetchNewBooksUseCases;
+
 
   Future<void> fetchFeaturedBooks() async {
     emit(FeaturedBooksLoading());
@@ -24,10 +24,5 @@ class FeaturedBooksCubit extends Cubit<FeaturedBooksState> {
     });
   }
 
-  Future<void> fetchNewBooks() async {
-    emit(FeaturedBooksLoading());
-    var result = await fetchNewBooksUseCases.Call();
-    result.fold((failure) => emit(FeaturedBooksFailure(failure.message)),
-        (success) => emit(FeatureBooksSucsses(success)));
-  }
+
 }
