@@ -10,7 +10,9 @@ abstract class HomeLocalDataSourcces {
   List<BookEntity> FetchNewBooks();
 }
 
-class HomeRemoteDataSourcceImpl extends HomeLocalDataSourcces {
+class HomeLocalDataSourcceImpl extends HomeLocalDataSourcces {
+
+
   @override
   List<BookEntity> FetchFeaturedBooks() {
     var box = Hive.box<BookEntity>(KfeaturedBox);

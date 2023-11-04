@@ -16,6 +16,8 @@ abstract class HomeRemoteDataSourcces {
 class HomeRemoteDataSourcceImpl extends HomeRemoteDataSourcces {
   late final ApiServices apiServices;
 
+  HomeRemoteDataSourcceImpl(ApiServices apiServices);
+
   @override
   Future<List<BookEntity>> FetchFeaturedBooks() async {
     var data = await apiServices.get(
