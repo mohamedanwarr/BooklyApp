@@ -5,19 +5,22 @@ import 'package:bookyapp/constant.dart';
 import 'package:hive/hive.dart';
 
 abstract class HomeLocalDataSourcces {
-  List<BookEntity> FetchFeaturedBooks();
+  List<BookEntity> FetchFeaturedBooks({int pagenum = 0});
 
   List<BookEntity> FetchNewBooks();
 }
 
 class HomeLocalDataSourcceImpl extends HomeLocalDataSourcces {
-
-
   @override
-  List<BookEntity> FetchFeaturedBooks() {
+  List<BookEntity> FetchFeaturedBooks({int pagenum = 0}) {
+    int startindex = pagenum * 10;
+    int Endindex = (pagenum + 1) * 10;
     var box = Hive.box<BookEntity>(KfeaturedBox);
-
-    return box.values.toList();
+    int length = box.length;
+    if (startindex >= length || Endindex > length) {
+      return [];
+    }
+    return box.values.toList().sublist(startindex, Endindex);
   }
 
   @override

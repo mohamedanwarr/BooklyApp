@@ -4,15 +4,13 @@ import 'package:bookyapp/Features/home/Domain/Entities/book_entity.dart';
 import 'package:bookyapp/Features/home/Domain/Repo/HomeRepo.dart';
 import 'package:dartz/dartz.dart';
 
-class FetchFeaturedBooksUseCases extends UseCase<List<BookEntity>,NoParam> {
+class FetchFeaturedBooksUseCases extends UseCase<List<BookEntity>, int> {
   final HomeRepo homeRepo;
 
   FetchFeaturedBooksUseCases(this.homeRepo);
 
   @override
-  Future<Either<Failure, List<BookEntity>>> Call([NoParam? param]) async {
-    // TODO: implement Call
-   await homeRepo.FetchFeaturedBooks();
-    throw UnimplementedError();
+  Future<Either<Failure, List<BookEntity>>> Call([int param = 0]) async {
+    return await homeRepo.FetchFeaturedBooks(pagenum: param);
   }
 }

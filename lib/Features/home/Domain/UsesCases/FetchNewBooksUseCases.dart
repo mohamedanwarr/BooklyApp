@@ -11,9 +11,8 @@ class FetchNewBooksUseCases extends UseCase<List<BookEntity>,NoParam>{
 
   @override
   Future<Either<Failure, List<BookEntity>>> Call([NoParam ?param])async {
-   await homeRepo.FetchNewBooks();
-    // TODO: implement Call
-    throw UnimplementedError();
+   return await homeRepo.FetchNewBooks();
+
   }
 
 }

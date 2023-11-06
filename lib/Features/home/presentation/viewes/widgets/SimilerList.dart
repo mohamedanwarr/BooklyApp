@@ -13,7 +13,7 @@ class SimilarListView extends StatelessWidget {
           itemBuilder: (context, int index) {
             return  Padding(
               padding: EdgeInsets.only(left:10),
-              child: customeBookItem(),
+              child: customeBookItem(image: '',),
             );
           }),
     );

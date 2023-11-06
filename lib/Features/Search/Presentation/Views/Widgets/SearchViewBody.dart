@@ -23,7 +23,7 @@ class Search_Viwe_Body extends StatelessWidget {
                   padding: EdgeInsets.symmetric(vertical: 15),
                   child: Text('Search  Results', style: Styles.textStyle18),
                 ),
-                Expanded(child: SearchResultListView()),
+                Expanded(child: SearchResultListView(books: [],)),
               ],
             ),
           ),

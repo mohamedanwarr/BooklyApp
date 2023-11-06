@@ -8,20 +8,20 @@ import 'package:bookyapp/constant.dart';
 import 'package:hive/hive.dart';
 
 abstract class HomeRemoteDataSourcces {
-  Future<List<BookEntity>> FetchFeaturedBooks();
+  Future<List<BookEntity>> FetchFeaturedBooks({int pagenum =0 });
 
   Future<List<BookEntity>> FetchNewBooks();
 }
 
 class HomeRemoteDataSourcceImpl extends HomeRemoteDataSourcces {
-  late final ApiServices apiServices;
+   final ApiServices apiServices;
 
-  HomeRemoteDataSourcceImpl(ApiServices apiServices);
+  HomeRemoteDataSourcceImpl( this.apiServices);
 
   @override
-  Future<List<BookEntity>> FetchFeaturedBooks() async {
+  Future<List<BookEntity>> FetchFeaturedBooks({int pagenum=0}) async {
     var data = await apiServices.get(
-        endpoint: 'volumes?q=Harry Potter &Filtering =free-ebooks');
+        endpoint: 'volumes?q=Harry Potter &Filtering =free-ebooks&startIndex=${pagenum * 10}');
     List<BookEntity> books = getBooksList(data);
     SaveBooksData(books,KfeaturedBox);
   return books;
